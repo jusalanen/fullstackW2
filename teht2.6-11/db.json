@@ -1,0 +1,24 @@
+{
+    "persons": [
+        { 
+        "name": "Arto Hellas", 
+        "number": "040-123456",
+        "id": 1
+        },
+        { 
+        "name": "Valtteri Vihavainen", 
+        "number": "0400-4561145",
+        "id": 2
+        },
+        { 
+        "name": "Laura Virtanen-Tukiainen", 
+        "number": "044-789654",
+        "id": 3
+        },
+        { 
+        "name": "Charlie Brown",
+        "number": "555-123456",
+        "id": 4
+        }
+    ]
+}
