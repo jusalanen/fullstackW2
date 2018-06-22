@@ -1,0 +1,34 @@
+{
+  "persons": [
+    {
+      "name": "Arto Hellas",
+      "number": "040-123456",
+      "id": 1
+    },
+    {
+      "name": "Valtteri Vihavainen",
+      "number": "0400-4561145",
+      "id": 2
+    },
+    {
+      "name": "Laura Virtanen-Tukiainen",
+      "number": "044-789654",
+      "id": 3
+    },
+    {
+      "name": "Charlie Brown",
+      "number": "555-123456",
+      "id": 4
+    },
+    {
+      "name": "Uusi Testi",
+      "number": "555-987651",
+      "id": 5
+    },
+    {
+      "name": "U2",
+      "number": "123",
+      "id": 6
+    }
+  ]
+}
