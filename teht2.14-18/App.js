@@ -2,6 +2,7 @@ import React from 'react';
 import Phonebook from './components/Phonebook';
 import personService from './services/personService';
 
+
 class App extends React.Component {
     constructor(props) {
         super(props)
@@ -11,6 +12,15 @@ class App extends React.Component {
         newNumber: '',
         filter: ''
         }
+        this.getPersons = this.getPersons.bind(this)
+    }
+
+    getPersons() {
+        console.log("getting persons")
+        personService.getAll()
+        .then( response => {
+            this.setState({persons: response.data})
+        })
     }
 
     componentDidMount() {
@@ -85,7 +95,7 @@ class App extends React.Component {
             </form>
             <h3>Numerot</h3>
             <div>
-                <Phonebook persons={filtered} />
+                <Phonebook persons={filtered} handleDelete={this.getPersons} />
             </div>
         </div>
         )
