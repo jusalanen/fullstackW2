@@ -54,16 +54,13 @@ class App extends React.Component {
                 name: this.state.newName,
                 number: this.state.newNumber
             }
-            const persons = this.state.persons.concat(personObj)
-            this.setState({
-                persons, 
-                newName: '',
-                newNumber: ''
-            })
             personService.create(personObj)
-            .then(response => {
-                console.log(response)
+            .then( response => {
+                console.log(response.data)
+                this.getPersons()
             })
+            this.setState({ newName: '' })
+            this.setState({ newNumber: '' })
         }        
     }
 

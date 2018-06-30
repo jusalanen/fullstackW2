@@ -11,14 +11,12 @@ const Person = (props) => {
         <td width='50'><button onClick = {function() {
                         if(window.confirm(
                             "Haluatko poistaa henkilön " + person.name)) {
-                                let id =  String(person.id)
-                                console.log("but id " + id)
-                                personService.deletePerson(id)
+                                personService.deletePerson(person.id)
                                 .then( () => {
-                                console.log("deleting person" + id)
+                                console.log("deleting person " + person.id)
                                 handleDelete()
-                                id = ""})
-                                }
+                                })
+                            }
                         }}
                         >poista</button></td></tr>
     )    

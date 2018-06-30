@@ -13,7 +13,6 @@ const create = (newObject) => {
 
 const deletePerson = (personId) => {
     const id = String(personId)
-    console.log(id)
     const strDel = baseUrl.concat("/", id)
     return axios.delete(strDel)
 }
