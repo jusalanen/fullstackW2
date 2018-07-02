@@ -93,7 +93,7 @@ class App extends React.Component {
             })
             this.setState({ newName: '', newNumber: '' })
             this.setState({ 
-                message: '' + personObj.name + ' lisätty luetteloon.'})
+                message: personObj.name + ' lisätty luetteloon.'})
             setTimeout( () => {
                 this.setState({ message: null })
             }, 5000)
