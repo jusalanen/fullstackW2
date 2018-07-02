@@ -23,7 +23,7 @@ class App extends React.Component {
         .then( response => {
             this.setState({persons: response.data})
         })
-        if (delPerson != null) {
+        if (delPerson !== null) {
             this.setState({ 
                 message: '' + delPerson.name + ' poistettu luettelosta.' })
             setTimeout( () => {
