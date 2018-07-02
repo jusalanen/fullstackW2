@@ -23,10 +23,10 @@ class App extends React.Component {
         .then( response => {
             this.setState({persons: response.data})
         })
-        if (delPerson !== null) {
+        if (delPerson != null) {
             this.setState({ 
                 message: '' + delPerson.name + ' poistettu luettelosta.' })
-            setTimeout( () => {
+                setTimeout( () => {
                 this.setState({ message: null })
             }, 5000)
         }
@@ -75,6 +75,25 @@ class App extends React.Component {
                             setTimeout( () => {
                                 this.setState({ message: null })
                             }, 5000)
+                        }).catch( error => {
+                            if (window.confirm(this.state.newName +
+                            ' on jo poistettu palvelimelta. Lisätäänkö uudelleen?')) {
+                                const personObj = {
+                                    name: this.state.newName,
+                                    number: this.state.newNumber
+                                }
+                                personService.create(personObj)
+                                .then( response => {
+                                    this.getPersons()
+                                    console.log(response.data)
+                                })
+                                this.setState({ newName: '', newNumber: '' })
+                                this.setState({ 
+                                    message: personObj.name + ' lisätty luetteloon.'})
+                                setTimeout( () => {
+                                    this.setState({ message: null })
+                                }, 5000)
+                            }
                         })
                     }
                 })               
